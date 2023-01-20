@@ -35,7 +35,6 @@ class _SwipeViewState extends State<SwipeView> {
   int _pageIndex = 0;
   bool isLastPage = false;
 
-  //Loading counter value on start
   Future<void> _loadPage(int pageIndex) async {
     final prefs = await SharedPreferences.getInstance();
     if (prefs.getString('page $pageIndex option') != null) {
@@ -85,7 +84,6 @@ class _SwipeViewState extends State<SwipeView> {
           },
         );
       },
-      // onPa,
       itemBuilder: (context, index) => Scaffold(
         appBar: AppBar(
           title: Text(

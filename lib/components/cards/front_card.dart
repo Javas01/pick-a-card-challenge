@@ -27,7 +27,6 @@ class FrontCard extends StatelessWidget {
             image: AssetImage(page.cardImage),
           ),
         ),
-        // child: Center(child: Text('Flip Me')),
       ),
     );
   }

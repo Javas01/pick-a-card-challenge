@@ -17,7 +17,7 @@ List<Page> pagesConfig = [
     cardImage: 'images/breakfast.png',
   ),
   Page(
-    title: 'Treat Yourself', // 200
+    title: 'Suprise Event 1', // 200
     options: [
       'My Signature Scent',
       'My Signature Scent',
@@ -35,7 +35,7 @@ List<Page> pagesConfig = [
     cardImage: 'images/lunch.webp',
   ),
   Page(
-    title: 'Birthday Suprise', // 150
+    title: 'Suprise Event 2', // 150
     options: [
       'The Selfie Experience',
       'The Selfie Experience',
@@ -44,10 +44,10 @@ List<Page> pagesConfig = [
     cardImage: 'images/fun.jpeg',
   ),
   Page(
-    title: 'Dinner', // 100
+    title: 'Dinner Reservation', // 100
     options: [
       'Sundial',
-      'Nikolais Roof',
+      'Sundial',
       'Sundial',
     ],
     cardImage: 'images/dinner.png',
