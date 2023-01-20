@@ -27,7 +27,6 @@ class SwipeView extends StatefulWidget {
 class _SwipeViewState extends State<SwipeView> {
   late List<Page> pages = pagesConfig;
   late CameraController _controller;
-  late Future<void> _initializeControllerFuture;
   late PageController _pageController;
   final FlipCardController _flip1Controller = FlipCardController();
   final FlipCardController _flip2Controller = FlipCardController();
@@ -62,7 +61,7 @@ class _SwipeViewState extends State<SwipeView> {
       ResolutionPreset.low,
     );
 
-    _initializeControllerFuture = _controller.initialize();
+    _controller.initialize();
   }
 
   @override
@@ -75,14 +74,14 @@ class _SwipeViewState extends State<SwipeView> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-      itemCount: 7,
+      itemCount: 6,
       controller: _pageController,
       onPageChanged: (index) {
         _loadPage(index);
         setState(
           () {
             _pageIndex = index;
-            isLastPage = index == 6;
+            isLastPage = index == 5;
           },
         );
       },

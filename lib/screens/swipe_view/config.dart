@@ -5,35 +5,51 @@ List<Page> pagesConfig = [
     title: 'Intro',
     options: ['', '', ''],
     cardImage: 'images/breakfast.png',
+    imagePath: 'none',
   ),
   Page(
-    title: 'Breakfast',
-    options: ['Pancake Social', 'Breakfast Boys', 'Atlanta Breakfast Club'],
+    title: 'Breakfast', // 100
+    options: [
+      'Pancake Social',
+      'Breakfast Boys',
+      'Atlanta Breakfast Club',
+    ],
     cardImage: 'images/breakfast.png',
   ),
   Page(
-    title: 'Self Care',
-    options: ['Buckhead Commons', 'Atlantic Station', 'Phipps Plaza'],
+    title: 'Treat Yourself', // 200
+    options: [
+      'My Signature Scent',
+      'My Signature Scent',
+      'My Signature Scent',
+    ],
     cardImage: 'images/shop.jpeg',
   ),
   Page(
-    title: 'Lunch',
-    options: ['Yebo', 'Springreens', 'Mizan\'s choice'],
+    title: 'Lunch', // 50
+    options: [
+      'Shwarma',
+      'Springreens',
+      'Chin Chin',
+    ],
     cardImage: 'images/lunch.webp',
   ),
   Page(
-    title: 'Fun Activity',
-    options: ['Medieval Times', 'Archery', 'Go-Karting'],
+    title: 'Birthday Suprise', // 150
+    options: [
+      'The Selfie Experience',
+      'The Selfie Experience',
+      'The Selfie Experience',
+    ],
     cardImage: 'images/fun.jpeg',
   ),
   Page(
-    title: 'Dinner',
-    options: ['STK', 'Polaris', 'Aria'],
+    title: 'Dinner', // 100
+    options: [
+      'Sundial',
+      'Nikolais Roof',
+      'Sundial',
+    ],
     cardImage: 'images/dinner.png',
-  ),
-  Page(
-    title: 'Desert 😉',
-    options: ['CheeseCake', 'Jeni\'s', 'Sex'],
-    cardImage: 'images/desert.png',
   ),
 ];

@@ -15,7 +15,10 @@ Future<Option?> showConfirm(
           child: const Text('Eh, pick again'),
           onPressed: () {
             option.controller.toggleCard();
-            Navigator.of(context).pop();
+            Future.delayed(
+              const Duration(milliseconds: 100),
+              () => Navigator.of(context).pop(),
+            );
           },
         ),
         TextButton(

@@ -5,7 +5,7 @@ import 'package:mystery_app/models/models.dart';
 import 'package:mystery_app/screens/summary.dart';
 
 class SexyBar extends StatelessWidget {
-  SexyBar({
+  const SexyBar({
     super.key,
     required this.pageController,
     required this.cameraController,
@@ -14,15 +14,16 @@ class SexyBar extends StatelessWidget {
     required this.isLastPage,
     required this.savePicture,
   });
-  PageController pageController;
-  CameraController cameraController;
-  int pageIndex;
-  List<Page> pages;
-  bool isLastPage;
-  Function savePicture;
+  final PageController pageController;
+  final CameraController cameraController;
+  final int pageIndex;
+  final List<Page> pages;
+  final bool isLastPage;
+  final Function savePicture;
 
   @override
   Widget build(BuildContext context) {
+    print(pageIndex);
     return SafeArea(
       minimum: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Row(
@@ -39,7 +40,7 @@ class SexyBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ...List.generate(
-                  7,
+                  6,
                   (index) => GestureDetector(
                     onTap: (() => pageController.animateToPage(
                           index,
@@ -56,7 +57,8 @@ class SexyBar extends StatelessWidget {
             ),
           ),
           Visibility(
-            visible: pages[pageIndex].selectedOption.isNotEmpty,
+            visible:
+                pages[pageIndex].selectedOption.isNotEmpty || pageIndex == 0,
             child: pages[pageIndex].imagePath.isEmpty
                 ? Container(
                     padding: const EdgeInsets.all(10),
@@ -71,7 +73,7 @@ class SexyBar extends StatelessWidget {
                           showBottomSheet(
                             enableDrag: true,
                             context: context,
-                            builder: (context) {
+                            builder: (context, [bool mounted = true]) {
                               return Column(
                                 children: [
                                   Expanded(
@@ -89,11 +91,17 @@ class SexyBar extends StatelessWidget {
                                                         .takePicture();
                                                 savePicture(image.path);
 
-                                                // If the picture was taken, display it on a new screen.
+                                                if (!mounted) return;
                                                 Navigator.pop(context);
                                               } catch (e) {
-                                                // If an error occurs, log the error to the console.
-                                                print(e);
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      e.toString(),
+                                                    ),
+                                                  ),
+                                                );
                                               }
                                             },
                                             backgroundColor: Colors.pinkAccent,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart' hide Page;
-import 'package:mystery_app/models/models.dart';
 
 class BackCard extends StatelessWidget {
   const BackCard({super.key, required this.option});
